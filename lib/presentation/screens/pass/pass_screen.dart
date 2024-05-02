@@ -1,8 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flight/presentation/screens/pass/widgets/pass_info_box.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import 'package:flight/presentation/screens/pass/dotted_separator.dart';
+import 'package:flight/presentation/screens/pass/widgets/dotted_separator.dart';
 import 'package:flight/utils/colors.dart';
 
 class PassScreen extends StatelessWidget {
@@ -65,23 +66,23 @@ class PassScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 2.h),
                 SizedBox(
-                  height: 63.h,
+                  height: 70.h,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: [
                       Card(
                         elevation: 5,
                         child: Container(
-                          height: 60.h,
+                          height: 67.h,
                           width: 90.w,
-                          padding: EdgeInsets.symmetric(horizontal: 3.w),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Column(
                             children: [
-                              SizedBox(
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 3.w),
                                 height: 16.h,
                                 child: Row(
                                   children: [
@@ -127,7 +128,8 @@ class PassScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 3.w),
                                 height: 30.h,
                                 child: Column(
                                   children: [
@@ -218,9 +220,9 @@ class PassScreen extends StatelessWidget {
                                       ],
                                     ),
                                     SizedBox(
-                                      height: 1.h,
+                                      height: 2.h,
                                     ),
-                                    Row(
+                                    const Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: [
@@ -238,13 +240,145 @@ class PassScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              )
+                              ),
+                              const DottedSeparator(color: Colors.grey),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "Gate",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "Seet",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "Flight no",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "Class",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "B2",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "12 B",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "RB45",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Center(
+                                      child: Text(
+                                        "Economy",
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 2.h,
+                              ),
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade200,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        "Boarding pass",
+                                        style: TextStyle(
+                                          fontSize: 12.sp,
+                                        ),
+                                      ),
+                                      Image.asset(
+                                        'assets/icons/barcode.png',
+                                        width: 40.w,
+                                        fit: BoxFit.fitWidth,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 16.h,
+                        top: 15.h + 10,
                         left: -5,
                         child: SizedBox(
                           width: 90.w,
@@ -259,6 +393,30 @@ class PassScreen extends StatelessWidget {
                           width: 20,
                           decoration: const BoxDecoration(
                             color: lightBlue,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 45.h,
+                        left: -5,
+                        child: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).scaffoldBackgroundColor,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 45.h,
+                        right: -5,
+                        child: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).scaffoldBackgroundColor,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -283,76 +441,26 @@ class PassScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class PassInfoBox extends StatelessWidget {
-  final String iconPath;
-  final String data;
-  final String keyWord;
-  const PassInfoBox({
-    Key? key,
-    required this.iconPath,
-    required this.data,
-    required this.keyWord,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(2.w),
-      height: 13.h,
-      width: 35.w,
-      decoration: BoxDecoration(
-        border: Border.all(color: lightBlue),
-        borderRadius: BorderRadius.circular(10),
-        gradient: LinearGradient(
-          colors: [
-            Colors.grey.withOpacity(0.5),
-            Colors.grey.withOpacity(0.4),
-            Colors.grey.withOpacity(0.3),
-            Colors.grey.withOpacity(0.2),
-            Colors.grey.withOpacity(0.1),
-            Colors.grey.withOpacity(0.1),
-            Colors.grey.withOpacity(0.1),
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: MaterialButton(
+        onPressed: () {},
+        color: black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            radius: 10.sp,
-            backgroundColor: lightBlue.withOpacity(0.5),
-            child: Padding(
-              padding: EdgeInsets.all(1.w),
-              child: Image.asset(
-                iconPath,
-                height: 12.sp,
-                width: 12.sp,
-                fit: BoxFit.contain,
-              ),
-            ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 10.w,
+            vertical: 1.5.h,
           ),
-          const Spacer(),
-          Text(
-            keyWord,
-            style: TextStyle(
-              fontSize: 10.sp,
-              color: Colors.grey,
-            ),
-          ),
-          const Spacer(),
-          Text(
-            data,
+          child: Text(
+            'Download ticket',
             style: TextStyle(
               fontSize: 12.sp,
+              color: Colors.white,
             ),
           ),
-        ],
+        ),
       ),
     );
   }
